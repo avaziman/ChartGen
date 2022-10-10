@@ -42,14 +42,16 @@ pub fn generate_svg<T: Copy + Display + PartialOrd + Sub<Output = T> + Div<Outpu
     points: &Vec<Point<T>>,
     size: Point<T>,
     color: String,
+    stroke_width: String
 ) -> String {
     let mut svg : String = format!("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"{}\" height=\"{}\" viewbox=\"0 0 {} {}\">", size.x, size.y, size.x, size.y);
 
-    svg += "<polyline fill=\"none\"";
-    svg += " stroke=\"";
+    svg += "<polyline fill=\"none";
+    svg += "\" stroke=\"";
     svg += &color;
-    svg += "\"";
-    svg += " points=\"";
+    svg += "\" stroke-width=\"";
+    svg += &stroke_width;
+    svg += "\" points=\"";
 
     for p in points {
         let point_str = format!("{0:.2},{1:.2} ", p.x, size.y - p.y);

@@ -17,6 +17,6 @@ fn main() {
     let size = Point { x: 150.0, y: 100.0 };
     println!(
         "{}",
-        generate_svg(&truncate_chart(&points, size), size, String::from("red"))
+        generate_svg(&truncate_chart(&points, size), size, String::from("red"), String::from("2"))
     );
 }
