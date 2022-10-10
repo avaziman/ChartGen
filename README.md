@@ -1,3 +1,8 @@
+# ChartGen
+super simple svg chart generating library in Rust.
+
+Example.rs:
+```rust
 extern crate chartgen;
 use chartgen::{generate_svg, truncate_chart, Point};
 
@@ -20,3 +25,9 @@ fn main() {
         generate_svg(&truncate_chart(&points, size), size, String::from("red"))
     );
 }
+```
+Results in:
+```xml
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="100" viewbox="0 0 150 100"><polyline fill="none" stroke="red" points="0.00,100.00 0.00,4.76 18.75,48.84 37.50,34.65 56.25,2.97 75.00,0.00 93.75,1.67 112.50,94.68 131.25,51.91 150.00,63.52 "/></svg>
+```
+[example]: ./exmaple.svg

@@ -1,5 +1,5 @@
 [package]
-name = "ChartGen"
+name = "chartgen"
 version = "0.1.0"
 edition = "2021"
 

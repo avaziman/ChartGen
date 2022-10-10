@@ -4,13 +4,13 @@ use std::ops::{Add, Div, Sub};
 use std::vec::Vec;
 
 #[derive(Clone, Copy)]
-struct Point<T: Copy + Display + PartialOrd + Div<Output = T>> {
-    x: T,
-    y: T,
+pub struct Point<T: Copy + Display + PartialOrd + Div<Output = T>> {
+    pub x: T,
+    pub y: T,
 }
 
 // assumes x points are sorted
-fn truncate_chart<T: Copy + Display + PartialOrd + Div<Output = T>>(
+pub fn truncate_chart<T: Copy + Display + PartialOrd + Div<Output = T>>(
     points: &Vec<Point<T>>,
     size: Point<T>,
 ) -> Vec<Point<T>> {
@@ -38,7 +38,7 @@ fn truncate_chart<T: Copy + Display + PartialOrd + Div<Output = T>>(
     return adjusted_points;
 }
 
-fn generate_svg<T: Copy + Display + PartialOrd + Sub<Output = T> + Div<Output = T>>(
+pub fn generate_svg<T: Copy + Display + PartialOrd + Sub<Output = T> + Div<Output = T>>(
     points: &Vec<Point<T>>,
     size: Point<T>,
     color: String,
